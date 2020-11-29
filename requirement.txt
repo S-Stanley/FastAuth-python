@@ -1,0 +1,11 @@
+fastapi
+py-bcrypt
+SQLAlchemy
+pydantic
+uvicorn[standard]
+psycopg2
+postgres
+python-multipart
+stripe
+fastapi-mail
+python-dotenv

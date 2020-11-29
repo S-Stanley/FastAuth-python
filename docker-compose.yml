@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+    psql:
+        image: postgres:12.4
+        container_name: psql
+        ports: 
+          - "127.0.0.1:5432:5432"
+        volumes: ['psql:/var/lib/postgresql/data']
+        restart: always
+        environment: 
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DB=postgres
+
+    api:
+        build: .
+        container_name: api
+        restart: always
+        ports: 
+          - 8000:8000
+        volumes: ['.:/app']
+        depends_on: ['psql']
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
+          - POSTGRES_DB=postgres
+
+volumes:
+    psql:
+        external: true
