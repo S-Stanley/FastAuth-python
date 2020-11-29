@@ -1,4 +1,4 @@
-# auth-process-python
+# FastAuth Python/Fastapi
 
 This project allows you to quickly start a small project when you do not have that much time because the authentication is already done. We can get through the essentials as quickly as possible.
 
